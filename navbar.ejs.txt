@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+  <link rel="stylesheet" href="./css/navbarejs.css">
+</head>
+
+
+
+<nav class="navbar sticky-top navbar-dark bg-dark d-flex justify-content-center align-items-center">
+
+    <a class="navbar-brand align" style="display: flex;" href="/"> <button class="btn btn-sm btn-secondary p-1 fw-bold" style=" margin-left: -370px;">Home</button> </a> 
+    <img src="/images/sparklogo.jpg" alt="" ><h2 class="title" style=" margin-top: 20px;"><pre style="color: white;"> Bank </pre></h2><img src="/images/sparklogo.jpg" alt="" >
+     
+
+</nav>

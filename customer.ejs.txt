@@ -1,0 +1,137 @@
+<%-include("./partials/header") %> <%-include("./partials/navbar") %>
+
+<div class="align">
+  <div
+  class="
+    container-fluid
+    customer-container
+    d-flex
+    justify-content-center
+    align-items-center
+    flex-column
+    mt-3
+    h-100
+    overflow-hidden
+    animate__animated animate__fadeIn animate__slow 
+  "
+>
+  <div class="container-fluid customer-card-container w-50 mt-5 p-5">
+    <div class="card p-2 customer-card">
+      <h5 class="card-header text-center fw-bold" style="color: black;">Customer Account Details</h5>
+      <div class="d-flex align-items-center justify-content-evenly mt-3 mb-3 c-pic-info">
+
+        <div class="div">
+          <ul class="list-group">
+            <li class="list-group-item" >
+              <span class="fw-bold"> Name: </span>
+
+              <%=customerData.name%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Date of Birth: </span>
+
+              <%=dob%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Gender: </span>
+
+              <%=customerData.gender%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Created on: </span>
+
+              <%=createdAt%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Modified on: </span>
+
+              <%=modifiedAt%>
+            </li>
+          </ul>
+
+          
+        </div>
+        <div>
+          <ul class="list-group ">
+            <li class="list-group-item">
+              <span class="fw-bold"> Account ID: </span>
+  
+              <%=customerData.accNo%>
+            </li>
+  
+            <li class="list-group-item">
+              <span class="fw-bold"> Email ID: </span>
+  
+              <%=customerData.email%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Contact: </span>
+  
+              <%=customerData.phone%>
+            </li>
+  
+            <li class="list-group-item">
+              <span class="fw-bold"> Address: </span>
+  
+              <%=customerData.address%>
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold"> Current Balance: </span
+              ><i class="fas fa-rupee-sign"></i
+              ><%=(customerData.currentBal).toLocaleString('en-IN')%>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-body border border-dark mt-2">
+        
+        <div
+          class="
+            container-fluid
+            buttons-container
+            d-flex
+            justify-content-around
+            align-items-center
+            mt-3
+          "
+        >
+          <a
+            href="<%=customerData.accNo%>/transactions"
+            class="btn btn-md btn-secondary fw-bold"
+            >Transactions</a
+          >
+
+          <button
+            type="button"
+            class="btn btn-md btn-success fw-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            Credit
+          </button>
+          <button
+            type="button"
+            class="btn btn-md btn-danger fw-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#withdrawlBackdrop"
+          >
+            Debit
+          </button>
+          <button
+            type="button"
+            class="btn btn-md btn-warning fw-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#transferBackdrop"
+          >
+            Transfer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<%-include("./partials/addFundsModal") %> <%-include("./partials/footer") %>
+<%-include("./partials/withdrawModal") %> <%-include("./partials/transferModal")
+%>

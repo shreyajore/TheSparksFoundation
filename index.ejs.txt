@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../css/indexejs.css">
+</head>
+<body>
+  
+</body>
+
+
+
+
+<%-include("./partials/header") %> <%-include("./partials/navbar") %>
+
+<div
+  class="
+    home-container
+    container
+    mt-4
+    animate__animated animate__fadeIn animate__slow 
+  "
+>
+  <% if (customers.length>0) { %>
+  
+  <div class="row" style="margin-bottom :-25px; margin-top: -20px;">
+    <h1 class="text-center" style="color: white;">List of Customers</h1>
+  </div>
+  <div class="row ">
+    <div class="col" >
+      <table
+        class="
+          customers-table
+          table table-light table-striped table-bordered
+          border-dark
+          mt-4
+        "
+      >
+        <thead class="text-center fs-6">
+          <tr>
+            <th>Sr. No.</th>
+            <th class="gana2">Name</th>
+            <th>Email ID</th>
+            <th>Address</th>
+            <th>Current Balance</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody class="text-center fs-6">
+          <% customers.forEach((customer,index) => { %>
+          <tr>
+            <td class="fw-bold"><%=index +1%></td>
+            <td><%=customer.name%></td>
+            <td><%=customer.email%></td>
+            <td><%=customer.address%></td>
+            <td>
+              <span><i class="fas fa-rupee-sign"></i></span
+              ><%=(customer.currentBal).toLocaleString('en-IN')%>
+            </td>
+            <td>
+              <a
+                type="button"
+                class="btn btn-sm btn-secondary p-1 fw-bold"
+                href="/customers/<%=(customer.accNo).toString()%>"
+              >
+                View Details
+              </a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <% }else{ %>
+  <div class="row">
+    <h1 class="text-center">There are no customers at the moment!</h1>
+  </div>
+  <%}%>
+</div>
+
+<%-include("./partials/footer") %>
+
+</html>
